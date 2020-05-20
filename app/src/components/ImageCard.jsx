@@ -6,13 +6,18 @@ import CardMedia from '@material-ui/core/CardMedia';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minWidth: 400,
-    maxWidth: 400,
+    marginTop: '10%',
+    minWidth: 425,
+
   },
   media: {
-    height: 0,
-    paddingTop: '90%', // 16:9
+    paddingTop: '100%', // 16:9
   },
+  cardHeaderStyle: {
+    color: "white",
+    boxShadow: "0 8px 40px -5px rgba(0,0,0,0.25)",
+    minHeight: 80,
+  }
 }));
 
 export default function ImageCard(props) {
@@ -20,8 +25,9 @@ export default function ImageCard(props) {
   return (
     <Card className={classes.root} variant="outlined">
       <CardHeader
+        className={classes.cardHeaderStyle}
         style={
-          props.classifierResponse.classification === "Hotdog" ? {backgroundColor: '#00FF00'} : {backgroundColor: 'red'}}
+          props.classifierResponse.classification === "Hotdog" ? {backgroundColor: '#8FB9A8'} : {backgroundColor: '#475C7A '}}
         title={props.classifierResponse.classification}
         titleTypographyProps={{variant:'h4', align: 'center' }}
       />
